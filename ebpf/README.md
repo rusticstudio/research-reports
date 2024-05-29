@@ -20,7 +20,7 @@ For creating a linux virtual machine I'm using [Lima](https://github.com/lima-vm
     To connect from terminal to VM just run `lima`. <br>
     To stop VM `limactl stop`. <br>
     More info [here](https://lima-vm.io/docs/usage/).
-3. To connect Visual Studio Code or other IDE, add ssh config found at `$HOME/.lima/default/ssh.config`.
+3. To connect Visual Studio Code or other IDE, add ssh config found at `$HOME/.lima/default/ssh.config`. Atention VS Code will user your host git.
 4. Install ***clang*** and ***llvm***.
     1. `sudo apt install llvm`
     2. `sudo apt install clang`
