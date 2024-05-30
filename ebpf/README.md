@@ -42,3 +42,8 @@ For creating a linux virtual machine I'm using [Lima](https://github.com/lima-vm
 3. `go build -o execve_ebpf`
 4. `sudo ./execve_ebpf`
 5. `Ctrl-C` to exit.
+
+### Reference
+1. [Edge Delta - An Applied Introduction to eBPF with Go](https://edgedelta.com/company/blog/applied-introduction-ebpf-go)
+2. [celium/ebpf - Documentation](https://ebpf-go.dev/guides/getting-started/)
+3. [celium/ebpf - examples/ringbuffer](https://github.com/cilium/ebpf/tree/main/examples/ringbuffer)
