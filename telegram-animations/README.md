@@ -4,7 +4,7 @@ Find the official docs about Telegram animations [here](https://core.telegram.or
 
 No clue what `The Lottie-based .TGS format` means, but it looks compatible with [Lottie](https://github.com/airbnb/lottie).
 
-## Emoji vs Stickers
+## Emojies vs Stickers
 
 In Telegram there is a distinction between emojies and stickers.
 
@@ -68,4 +68,4 @@ Here is a collections of some special animations that we think are worth to keep
 This emoji was removed by Telegram due to some complaints from Apple.
 Users tried to get it back, but were denied, check the ticket [here](https://bugs.telegram.org/c/11912).
 
-Download the `tgs` from: [./peach.json](./peach.json)
+Download the `tgs` from [peach.json](./peach.json) file
