@@ -2,12 +2,17 @@
 
 #include <linux/bpf.h>
 #include <bpf/bpf_helpers.h>
+#include <bpf/bpf_tracing.h>
+#include <linux/ptrace.h>
+
+#define _(P) ({typeof(P) val = 0; bpf_probe_read(&val, sizeof(val), &P); val;})
 
 char __license[] SEC("license") = "Dual MIT/GPL";
 
 struct event {
 	__u32 pid;
 	__u8 comm[80];
+	__u8 arg[80];
 };
 
 struct {
@@ -31,7 +36,8 @@ int kprobe_execve(struct pt_regs *ctx) {
 
 	task_info->pid = tgid;
 	bpf_get_current_comm(&task_info->comm, 80);
-
+	bpf_probe_read(&task_info->arg, sizeof(task_info->arg), (char *) PT_REGS_PARM1(ctx));;
+	
 	bpf_ringbuf_submit(task_info, 0);
 
 	return 0;

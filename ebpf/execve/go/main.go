@@ -15,7 +15,7 @@ import (
 	"golang.org/x/sys/unix"
 )
 
-//go:generate go run github.com/cilium/ebpf/cmd/bpf2go -type event bpf ../ringbuffer.c
+//go:generate go run github.com/cilium/ebpf/cmd/bpf2go -target amd64 -type event bpf ../ringbuffer.c
 
 func main() {
 	// Name of the kernel function to trace.
@@ -85,6 +85,6 @@ func main() {
 			continue
 		}
 
-		log.Printf("pid: %d\tcomm: %s\n", event.Pid, unix.ByteSliceToString(event.Comm[:]))
+		log.Printf("pid: %d\tcomm: %s\t arg: %s\n", event.Pid, unix.ByteSliceToString(event.Comm[:]), unix.ByteSliceToString(event.Arg[:]))
 	}
 }
