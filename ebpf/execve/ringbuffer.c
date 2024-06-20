@@ -5,8 +5,6 @@
 #include <bpf/bpf_tracing.h>
 #include <linux/ptrace.h>
 
-#define _(P) ({typeof(P) val = 0; bpf_probe_read(&val, sizeof(val), &P); val;})
-
 char __license[] SEC("license") = "Dual MIT/GPL";
 
 struct event {
